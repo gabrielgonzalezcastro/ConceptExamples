@@ -1,0 +1,17 @@
+Los atributos constituyen un medio apropiado para asociar metadatos o información declarativa con código
+(ensamblados, tipos, métodos, propiedades, etc.). Después de asociar un atributo a una entidad del programa,
+éste se puede consultar en tiempo de ejecución mediante una técnica denominada reflexión
+
+Los atributos tienen las propiedades siguientes:
+
+- Los atributos agregan metadatos al programa. Los metadatos son información sobre los tipos definidos en un
+ programa. Todos los ensamblados .NET contienen un conjunto de metadatos especificado que describe los tipos
+ y los miembros de tipo definidos en el ensamblado. Puede agregar atributos personalizados para especificar
+ toda información adicional necesaria. Para obtener más información, vea Crear atributos personalizados.
+
+- Se puede aplicar uno o más atributos a todos los ensamblados, módulos o elementos de programa más pequeños, 
+como las clases y las propiedades.
+
+ - Los atributos pueden aceptar argumentos del mismo modo que los métodos y las propiedades.
+
+- El programa puede examinar sus propios metadatos o los metadatos de otros programas mediante la reflection. 
