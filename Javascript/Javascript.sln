@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Namespaces", "Javascript\Namespaces.csproj", "{EAFBF6B4-0117-4306-B0CC-23035E8559DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{3629EAB7-12FA-4ADC-BBD0-9FF38DF2E8F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequireJs_Demo", "RequireJs_Demo\RequireJs_Demo.csproj", "{BBA96066-D025-4A87-ADE2-CABCDEEE13EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAFBF6B4-0117-4306-B0CC-23035E8559DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFBF6B4-0117-4306-B0CC-23035E8559DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFBF6B4-0117-4306-B0CC-23035E8559DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFBF6B4-0117-4306-B0CC-23035E8559DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3629EAB7-12FA-4ADC-BBD0-9FF38DF2E8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3629EAB7-12FA-4ADC-BBD0-9FF38DF2E8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3629EAB7-12FA-4ADC-BBD0-9FF38DF2E8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3629EAB7-12FA-4ADC-BBD0-9FF38DF2E8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA96066-D025-4A87-ADE2-CABCDEEE13EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA96066-D025-4A87-ADE2-CABCDEEE13EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA96066-D025-4A87-ADE2-CABCDEEE13EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA96066-D025-4A87-ADE2-CABCDEEE13EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
