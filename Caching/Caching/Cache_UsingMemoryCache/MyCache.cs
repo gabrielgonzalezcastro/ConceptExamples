@@ -30,7 +30,7 @@ namespace Cache_UsingMemoryCache
                 _cacheItemPolicy.Priority = CacheItemPriority.NotRemovable;
 
             //set the duration of the item in the cache
-            _cacheItemPolicy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(60.00);
+            _cacheItemPolicy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(10);
 
             //set the method that is called when a item is removed from the cache
             _callback = new CacheEntryRemovedCallback(this.MyCachedItemRemovedCallback);
@@ -47,9 +47,9 @@ namespace Cache_UsingMemoryCache
         /// <summary>
         /// Method to get a element to the cache object
         /// </summary>
-        public Object GetMyCachedItem(string cacheKeyName)
+        public T GetMyCachedItem<T>(string cacheKeyName) where T:class 
         {
-            return _cache[cacheKeyName] as Object;
+            return _cache[cacheKeyName] as T;
         }
 
         /// <summary>
