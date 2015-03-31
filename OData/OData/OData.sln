@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Data.Service", "WCF.Data.Service\WCF.Data.Service.csproj", "{67DBADC0-6A2C-41AC-8133-7DC61B01714F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{3DD0565D-A312-4E5F-80E6-7BAB7B234684}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67DBADC0-6A2C-41AC-8133-7DC61B01714F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DBADC0-6A2C-41AC-8133-7DC61B01714F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DBADC0-6A2C-41AC-8133-7DC61B01714F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DBADC0-6A2C-41AC-8133-7DC61B01714F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD0565D-A312-4E5F-80E6-7BAB7B234684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD0565D-A312-4E5F-80E6-7BAB7B234684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD0565D-A312-4E5F-80E6-7BAB7B234684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD0565D-A312-4E5F-80E6-7BAB7B234684}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
