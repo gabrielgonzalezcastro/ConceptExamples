@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Data", "GeoLib.Data\GeoLib.Data.csproj", "{DB2CA02F-5D34-4734-8A44-634BFD381244}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Core", "GeoLib.Core\GeoLib.Core.csproj", "{461922D9-747F-4BB0-AC2E-4737139EEDB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Contracts", "GeoLib.Contracts\GeoLib.Contracts.csproj", "{5F1FFDBA-BBAA-4E8A-BE50-4A29675DD500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Services", "GeoLib.Services\GeoLib.Services.csproj", "{EE4A4FF2-57B8-42D2-A1A4-DBFDBC9CB949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Tests", "GeoLib.Tests\GeoLib.Tests.csproj", "{2C7C61E8-0922-48F3-8881-8F1D96710806}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8AFE0611-78F6-48D6-943A-5D3DD1CF1936}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{66019C64-12B4-4D96-8446-A4432B85DC09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.ConsoleHost", "GeoLib.ConsoleHost\GeoLib.ConsoleHost.csproj", "{A9F4BC8C-12D5-4666-98A1-616FEE5349F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{3904E206-CD10-450D-A319-D99F143C5A15}"
+	ProjectSection(SolutionItems) = preProject
+		ZipCodeData.mdf = ZipCodeData.mdf
+		ZipCodeData_log.ldf = ZipCodeData_log.ldf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.WebHost", "GeoLib.WebHost\GeoLib.WebHost.csproj", "{3C1248BC-638F-4B13-81DF-26B45459BEB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.WindowsHost", "GeoLib.WindowsHost\GeoLib.WindowsHost.csproj", "{0308AFA2-943C-4D97-A4EF-10DAD6577343}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{AF3ABEA8-175B-4E2B-95A5-EFA632F8E1C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Proxies", "GeoLib.Proxies\GeoLib.Proxies.csproj", "{E8957DB7-E750-4189-85CC-42AF8E8C7E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLib.Client", "GeoLib.Client\GeoLib.Client.csproj", "{A37DFFD0-A833-4D9B-86E0-906EF7D1C731}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB2CA02F-5D34-4734-8A44-634BFD381244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB2CA02F-5D34-4734-8A44-634BFD381244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB2CA02F-5D34-4734-8A44-634BFD381244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2CA02F-5D34-4734-8A44-634BFD381244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461922D9-747F-4BB0-AC2E-4737139EEDB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461922D9-747F-4BB0-AC2E-4737139EEDB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461922D9-747F-4BB0-AC2E-4737139EEDB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461922D9-747F-4BB0-AC2E-4737139EEDB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1FFDBA-BBAA-4E8A-BE50-4A29675DD500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1FFDBA-BBAA-4E8A-BE50-4A29675DD500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1FFDBA-BBAA-4E8A-BE50-4A29675DD500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1FFDBA-BBAA-4E8A-BE50-4A29675DD500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4A4FF2-57B8-42D2-A1A4-DBFDBC9CB949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4A4FF2-57B8-42D2-A1A4-DBFDBC9CB949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4A4FF2-57B8-42D2-A1A4-DBFDBC9CB949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4A4FF2-57B8-42D2-A1A4-DBFDBC9CB949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C7C61E8-0922-48F3-8881-8F1D96710806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7C61E8-0922-48F3-8881-8F1D96710806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7C61E8-0922-48F3-8881-8F1D96710806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7C61E8-0922-48F3-8881-8F1D96710806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F4BC8C-12D5-4666-98A1-616FEE5349F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F4BC8C-12D5-4666-98A1-616FEE5349F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F4BC8C-12D5-4666-98A1-616FEE5349F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F4BC8C-12D5-4666-98A1-616FEE5349F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1248BC-638F-4B13-81DF-26B45459BEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1248BC-638F-4B13-81DF-26B45459BEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1248BC-638F-4B13-81DF-26B45459BEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1248BC-638F-4B13-81DF-26B45459BEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0308AFA2-943C-4D97-A4EF-10DAD6577343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0308AFA2-943C-4D97-A4EF-10DAD6577343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0308AFA2-943C-4D97-A4EF-10DAD6577343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0308AFA2-943C-4D97-A4EF-10DAD6577343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8957DB7-E750-4189-85CC-42AF8E8C7E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8957DB7-E750-4189-85CC-42AF8E8C7E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8957DB7-E750-4189-85CC-42AF8E8C7E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8957DB7-E750-4189-85CC-42AF8E8C7E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37DFFD0-A833-4D9B-86E0-906EF7D1C731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37DFFD0-A833-4D9B-86E0-906EF7D1C731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37DFFD0-A833-4D9B-86E0-906EF7D1C731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37DFFD0-A833-4D9B-86E0-906EF7D1C731}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9F4BC8C-12D5-4666-98A1-616FEE5349F3} = {66019C64-12B4-4D96-8446-A4432B85DC09}
+		{3C1248BC-638F-4B13-81DF-26B45459BEB3} = {66019C64-12B4-4D96-8446-A4432B85DC09}
+		{0308AFA2-943C-4D97-A4EF-10DAD6577343} = {66019C64-12B4-4D96-8446-A4432B85DC09}
+		{E8957DB7-E750-4189-85CC-42AF8E8C7E7B} = {AF3ABEA8-175B-4E2B-95A5-EFA632F8E1C1}
+		{A37DFFD0-A833-4D9B-86E0-906EF7D1C731} = {AF3ABEA8-175B-4E2B-95A5-EFA632F8E1C1}
+	EndGlobalSection
+EndGlobal
