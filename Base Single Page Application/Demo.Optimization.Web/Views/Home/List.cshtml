@@ -1,0 +1,24 @@
+﻿<div ng-controller="BookListCtrl">
+    <a class="pull-right btn btn-primary" href="/#/BookCreate">Add Book</a>
+    <h2 class="text-primary">Books</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Stock Level</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="book in books">
+                <td>{{ book.bookId }}</td>
+                <td><a href="/#/BookDetails/{{ book.bookId }}">{{ book.title }}</a></td>
+                <td>{{ book.author.firstName}} {{ book.author.lastName }}</td>
+                <td>{{ book.numberInStock }}</td>
+                <td><a ng-click="removeBook(book)" class="btn btn-danger">Remove</a>   </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

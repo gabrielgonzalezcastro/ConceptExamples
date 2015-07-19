@@ -1,0 +1,22 @@
+﻿<div ng-controller="BookDetailsCtrl">
+    <a href="/#/Books" class="btn btn-default glyphicon glyphicon-arrow-left">Return to List</a>
+    <img src="http://placehold.it/250x150" class="pull-right img-rounded" />
+    <h2 class="text-primary">{{ book.title }}</h2>
+
+    <div class="row">
+        <div class="col-lg-2">Description:</div>
+        <div class="col-lg-6 text-muted">{{ book.description }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">Author:</div>
+        <div class="col-lg-6 text-muted">{{ book.author.lastName }}, {{ book.author.firstName }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">Number in Stock:</div>
+        <div class="col-lg-6 text-muted">{{ book.numberInStock }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">Number of Purchases:</div>
+        <div class="col-lg-6 text-muted">{{ book.numberPurchases }}</div>
+    </div>
+</div>
