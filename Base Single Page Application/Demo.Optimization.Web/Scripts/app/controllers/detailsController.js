@@ -1,5 +1,9 @@
-﻿angular.module("books")
-    .controller("BookDetailsCtrl", ['$scope', '$routeParams', 'BookService', function ($scope, $routeParams, BookService) {
+﻿(function () {
+    //Controller Creation
+    var detailsController = function ($scope, $routeParams, bookService) {
         var bookId = $routeParams.id;
-        $scope.book = BookService.get(bookId);
-    }]);
+        $scope.book = bookService.get(bookId);
+    };
+
+    angular.module('BookApp').controller('detailsController', ['$scope', '$routeParams', 'bookService', detailsController]);
+})();

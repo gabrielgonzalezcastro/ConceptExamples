@@ -1,12 +1,19 @@
-﻿angular.module('books', [])
-    .config(function($routeProvider) {
+﻿
+(function () {
+    var app = angular.module('BookApp', ['ngRoute']);
+
+    app.config(['$routeProvider', function ($routeProvider) {
+
         $routeProvider
-            .when("/Home", { templateUrl: '/Home/Dashboard' })
-            .when("/Books", { templateUrl: '/Home/List' })
-            .when("/BookDetails/:id", { templateUrl: '/Home/Details' })
-            .when("/BookCreate", { templateUrl: '/Home/Create' })
-            .otherwise({ redirectTo: '/Home' });
-    });
+             .when("/Home", { controller: 'homeController', templateUrl: '/AngularViews/Dashboard.html' })
+             .when("/Books", { controller: 'listController', templateUrl: '/AngularViews/List.html' })
+             .when("/BookDetails/:id", { controller: 'detailsController', templateUrl: '/AngularViews/Details.html' })
+             .when("/BookCreate", { controller: 'createController', templateUrl: '/AngularViews/Create.html' })
+             .otherwise({ redirectTo: '/Home' });
+
+    }]);
+
+})();
 
 
 

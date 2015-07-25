@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo.Optimization.Web</RootNamespace>
-    <AssemblyName>Demo.Optimization.Web</AssemblyName>
+    <RootNamespace>Base.SinglePageApplication</RootNamespace>
+    <AssemblyName>Base.SinglePageApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -26,6 +26,7 @@
     <SccProvider>SAK</SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +46,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.5.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -56,6 +66,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -102,8 +115,14 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundles\LessStyleBundle.cs" />
+    <Compile Include="App_Start\Bundles\LessTransform.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -113,6 +132,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularViews\Create.html" />
+    <Content Include="AngularViews\Dashboard.html" />
+    <Content Include="AngularViews\Details.html" />
+    <Content Include="AngularViews\List.html" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
@@ -122,54 +145,56 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\app\js\angular-bootstrap-prettify.js" />
-    <Content Include="Scripts\app\js\angular-bootstrap-prettify.min.js" />
-    <Content Include="Scripts\app\js\angular-bootstrap.js" />
-    <Content Include="Scripts\app\js\angular-bootstrap.min.js" />
-    <Content Include="Scripts\app\js\angular-cookies.js" />
-    <Content Include="Scripts\app\js\angular-cookies.min.js" />
-    <Content Include="Scripts\app\js\angular-loader.js" />
-    <Content Include="Scripts\app\js\angular-loader.min.js" />
-    <Content Include="Scripts\app\js\angular-mocks.js" />
-    <Content Include="Scripts\app\js\angular-resource.js" />
-    <Content Include="Scripts\app\js\angular-resource.min.js" />
-    <Content Include="Scripts\app\js\angular-sanitize.js" />
-    <Content Include="Scripts\app\js\angular-sanitize.min.js" />
-    <Content Include="Scripts\app\js\angular-scenario.js" />
-    <Content Include="Scripts\app\js\angular.js" />
-    <Content Include="Scripts\app\js\angular.min.js" />
+    <Content Include="Scripts\angular-bootstrap-prettify.js" />
+    <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
+    <Content Include="Scripts\angular-bootstrap.js" />
+    <Content Include="Scripts\angular-bootstrap.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\services\bookService.js" />
     <Content Include="Scripts\app\controllers\createController.js" />
     <Content Include="Scripts\app\controllers\detailsController.js" />
     <Content Include="Scripts\app\controllers\homeController.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\listController.js" />
-    <Content Include="Scripts\app\js\bootstrap.js" />
-    <Content Include="Scripts\app\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\toastr.less" />
-    <None Include="Scripts\app\js\jquery-2.0.3.intellisense.js" />
-    <Content Include="Scripts\app\js\jquery-2.0.3.js" />
-    <Content Include="Scripts\app\js\jquery-2.0.3.min.js" />
-    <Content Include="Scripts\app\js\modernizr-2.6.2.js" />
-    <Content Include="Scripts\app\js\toastr.js" />
-    <Content Include="Scripts\app\js\toastr.min.js" />
-    <Content Include="Scripts\app\js\underscore.js" />
-    <Content Include="Scripts\app\js\underscore.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Scripts\app\js\jquery-2.0.3.min.map" />
-    <Content Include="Views\Home\Create.cshtml" />
-    <Content Include="Views\Home\Dashboard.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\List.cshtml" />
-    <Content Include="Scripts\app\js\underscore.min.map" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,6 +1,7 @@
-﻿// service used for storing and retrieval of central book information
-angular.module("books")
-    .factory("BookService", [function() {
+﻿(function () {
+
+    var bookService = function () {
+
         var books = [
             { bookId: 1, title: 'To Kill a Mockingbird', author: { firstName: 'Harper', lastName: 'Lee' }, numberInStock: 2, numberPurchases: 4 },
             { bookId: 2, title: 'The Great Gatsby', author: { firstName: 'Scott', lastName: 'Fitzgerald' }, numberInStock: 2, numberPurchases: 6 }
@@ -19,11 +20,16 @@ angular.module("books")
                     books.splice(index, 1);
                 }
             },
-            get: function(bookId) {
+            get: function (bookId) {
                 return _.findWhere(books, { bookId: parseInt(bookId) });
             },
-            getAll: function() {
+            getAll: function () {
                 return books;
             }
         };
-    }]);
+    };
+
+    angular.module('BookApp').service('bookService', bookService);
+
+
+}());

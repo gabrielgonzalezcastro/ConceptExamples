@@ -1,8 +1,13 @@
-﻿angular.module("books")
-    .controller("BookListCtrl", ['$scope', 'BookService', function($scope, BookService) {
-        $scope.books = BookService.getAll();
+﻿(function () {
+    
+    var listController = function ($scope, bookService) {
 
-        $scope.removeBook = function(book) {
-            BookService.remove(book);
+        $scope.books = bookService.getAll();
+
+        $scope.removeBook = function (book) {
+            bookService.remove(book);
         };
-    }]);
+    };
+
+    angular.module('BookApp').controller('listController', ['$scope', 'bookService', listController]);
+})();
