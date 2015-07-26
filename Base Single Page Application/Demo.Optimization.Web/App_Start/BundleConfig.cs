@@ -1,4 +1,5 @@
 ﻿using System.Web.Optimization;
+using Base.SinglePageApplication.Bundles;
 
 namespace Base.SinglePageApplication
 {
@@ -20,15 +21,15 @@ namespace Base.SinglePageApplication
             // script bundle declarations
             // ScriptBundle is the same as generic bundle, except it automatically applies the default JsMinify transformation
             bundles.Add(new ScriptBundle("~/bundles/modernizr")
-                .Include("~/Scripts/modernizr-{version}.js"));
+                .Include("~/Scripts/framework/modernizr-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/framework").Include(
-                "~/Scripts/jquery-{version}.js",
-                "~/Scripts/underscore.js",
-                "~/Scripts/angular.js",
-                "~/Scripts/angular-route.js",
-                "~/Scripts/toastr.js",
-                "~/Scripts/bootstrap.js"));
+                "~/Scripts/framework/jquery-{version}.js",
+                "~/Scripts/framework/underscore.js",
+                "~/Scripts/framework/angular.js",
+                "~/Scripts/framework/angular-route.js",
+                "~/Scripts/framework/toastr.js",
+                "~/Scripts/framework/bootstrap.js"));
 
             // the order you include scripts in the bundle is the order they will be consolidated
             bundles.Add(new ScriptBundle("~/bundles/app")
@@ -42,9 +43,9 @@ namespace Base.SinglePageApplication
             
             // style bundle declarations, work the same as ScriptBundles except they have a CssMinify specific
             // transformation associated with them.
-            bundles.Add(new StyleBundle("~/content/site").Include(
+            bundles.Add(new LessStyleBundle("~/content/site").Include(
                 "~/Content/bootstrap/bootstrap.css",
-                "~/Content/site.css",
+                "~/Content/site.less",
                 "~/Content/toastr.css"));
             
             #endregion
