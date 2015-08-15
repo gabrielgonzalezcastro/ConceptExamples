@@ -1,0 +1,89 @@
+﻿<SecurityConfiguration xmlns:i="http://wwww.w3.org/2001/XMLSchema-instance">
+  <MenuGroups>
+    <Group>
+      <Name>New Order</Name>
+      <MenuEntries>
+        <MenuEntry>
+          <Role>NewOrder_Car</Role>
+          <Title>Cars</Title>
+          <Link></Link>
+          <AllowedGroups>
+            <Group>AD.Group.1</Group>
+            <Group>AD.Group.2</Group>
+          </AllowedGroups>
+        </MenuEntry>
+        <MenuEntry>
+          <Role>NewOrder_PCs</Role>
+          <Title>PCs</Title>
+          <Link></Link>
+          <AllowedGroups>
+            <Group>AD.Group.3</Group>
+          </AllowedGroups>
+        </MenuEntry>
+      </MenuEntries>
+    </Group>
+
+    <Group>
+      <Name>Amend</Name>
+      <MenuEntries>
+        <MenuEntry>
+          <Role>AmendOrder_Car</Role>
+          <Title>Amend Cars</Title>
+          <Link></Link>
+          <AllowedGroups>
+            <Group>AD.Group.4</Group>
+            <Group>AD.Group.5</Group>
+            <Group>AD.Group.6</Group>
+          </AllowedGroups>
+        </MenuEntry>
+        <MenuEntry>
+          <Role>AmendOrder_PCs</Role>
+          <Title>Amend PCs</Title>
+          <Link></Link>
+          <AllowedGroups>
+            <Group>AD.Group.7</Group>
+            <Group>AD.Group.8</Group>
+          </AllowedGroups>
+        </MenuEntry>
+      </MenuEntries>
+    </Group>
+  </MenuGroups>
+
+  <!--Home Page Definitions By AD Groups-->
+  <HomePageDefinitions>
+    <HomePageFor>
+      <Group>AD.Group.1</Group>
+      <Url>/HomePage.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.2</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.3</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.4</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.5</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.6</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.7</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+    <HomePageFor>
+      <Group>AD.Group.8</Group>
+      <Url>/Cars.aspx</Url>
+    </HomePageFor>
+  </HomePageDefinitions>
+
+
+</SecurityConfiguration>
