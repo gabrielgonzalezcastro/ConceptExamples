@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Security;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Base.SinglePageApplication.Infrastructure;
 
 namespace Base.SinglePageApplication.Controllers
@@ -23,7 +24,7 @@ namespace Base.SinglePageApplication.Controllers
             {
                 //Generate the Token
                 string windowUsername = HttpContext.User.Identity.Name;
-                token = TokenManager.CreateJwtToken(windowUsername, "role_Guest","demoApp");
+                //token = TokenManager.CreateJwtToken(windowUsername, "role_Guest","demoApp");
             }
             catch (Exception ex)
             {
@@ -37,17 +38,49 @@ namespace Base.SinglePageApplication.Controllers
                 JsonSettings = PageConfiguration.GetDefaultJsonConfiguration(),
                 User = User.Identity.Name,
                 DefaultPath = "/Home",
-                Token = token
+                Token = GetTokenAndDestroyCookie()
             };
 
             pageConfiguration.AngularRoutes = GetAngularRoutes();
-            
-       
-            //TODO: 2.- USE THE TOKEN TO ADDED IN A HEADER CALLED 'AuthToken' IN EACH REQUEST USING RESTANGULAR 
-            //TODO: 3.- VERIFY THAT THE AUTHENTICATION OF THE WEB API WORKS (ApiAuthorizeAttribute)
 
             return View(pageConfiguration);
         }
+
+        [AllowAnonymous]
+        public ActionResult Login(string message)
+        {
+            var pageConfiguration = new PageConfiguration
+            {
+                ApplicationName = "Books Online",
+                ApplicationVersion = Assembly.GetAssembly(typeof(HomeController)).GetName().Version.ToString(),
+                JsonSettings = PageConfiguration.GetDefaultJsonConfiguration(),
+                User = User.Identity.Name,
+                DefaultPath = "/Home",                
+            };
+
+            ViewBag.Message = message;
+            ViewBag.UserName = HttpContext.User.Identity.Name;
+            ViewBag.IsDisabled = "true";
+            if(string.IsNullOrEmpty(ViewBag.UserName))
+                ViewBag.IsDisabled = "false";
+
+            return View(pageConfiguration);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult LoginPost(FormCollection form)
+        {
+            var userName = HttpContext.User.Identity.Name;
+            var token = TokenManager.CreateJwtToken(userName, "role_Guest", "demoApp");
+            var authCookie = new HttpCookie("AuthToken", token);
+            authCookie.Expires = DateTime.UtcNow.AddMinutes(5);
+            Response.AppendCookie(authCookie);
+            return RedirectToAction("Index");
+        }
+
+        
+
 
         private List<AngularRoute> GetAngularRoutes()
         {
@@ -67,7 +100,7 @@ namespace Base.SinglePageApplication.Controllers
                 },
                 new AngularRoute
                 {
-                    Url = "/BookDetails",
+                    Url = "/BookDetails/:id",
                     Controller = "detailsController",
                     Template = "/AngularViews/Details.html?v="
                 },
@@ -78,6 +111,20 @@ namespace Base.SinglePageApplication.Controllers
                     Template = "/AngularViews/Create.html?v="
                 }
             };
+        }
+
+        private string GetTokenAndDestroyCookie()
+        {
+            string token = string.Empty;
+
+             var authTokenCookie = HttpContext.Request.Cookies["AuthToken"];
+            if (authTokenCookie != null)
+            {
+                token = authTokenCookie.Value;
+                HttpContext.Request.Cookies.Remove("AuthToken");
+            }
+
+            return token;
         }
     }
 }

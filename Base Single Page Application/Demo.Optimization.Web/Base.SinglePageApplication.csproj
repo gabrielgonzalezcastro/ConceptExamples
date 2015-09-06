@@ -163,12 +163,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\ApiAuthorizeAttribute.cs" />
     <Compile Include="Filters\ApiExceptionFilter.cs" />
+    <Compile Include="Filters\PageAuthorizationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AngularRoute.cs" />
     <Compile Include="Infrastructure\PageConfiguration.cs" />
     <Compile Include="Infrastructure\TokenManager.cs" />
+    <Compile Include="Infrastructure\TokenRenovationHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Base.SinglePageApplication.Filters;
 
 namespace Base.SinglePageApplication
 {
@@ -14,6 +15,7 @@ namespace Base.SinglePageApplication
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new PageAuthorizationAttribute());
         }
     }
 }

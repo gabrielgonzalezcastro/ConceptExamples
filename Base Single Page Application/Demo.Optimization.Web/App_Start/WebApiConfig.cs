@@ -40,8 +40,7 @@ namespace Base.SinglePageApplication.App_Start
             config.Filters.Add(new ApiAuthorizeAttribute());
 
             //Token renovation
-            //TODO: Implment TokenRenovvationHandler on Core Project
-            //config.MessageHandlers.Add(new TokenRenovationHandler);
+            config.MessageHandlers.Add(new TokenRenovationHandler());
         }
     }
 }

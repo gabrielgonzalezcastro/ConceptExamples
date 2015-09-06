@@ -5,6 +5,7 @@ using System.IdentityModel.Protocols.WSTrust;
 using System.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.ServiceModel.Security.Tokens;
+using System.Web;
 
 namespace Base.SinglePageApplication.Infrastructure
 {
@@ -26,7 +27,7 @@ namespace Base.SinglePageApplication.Infrastructure
             JwtSecurityToken jwtToken = new JwtSecurityToken(
                 issuer: "demoApp",
                 audience: audience,
-                claims: new List<Claim>() {new Claim(ClaimTypes.Name, "Andras Nemes")},
+                claims: claimList,
                 notBefore: null,
                 expires: DateTime.Now.AddDays(1),
                 signingCredentials: new SigningCredentials(sSKey,

@@ -30,8 +30,8 @@
             //deferred - the promise for the request
             restangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
                 if (response.headers("AuthToken")) {
-                    window.appConfig.tokens = response.headers("AuthToken");
-                    restangularProvider.setDefaultHeaders({ AuthToken: 'Bearer ' + window.appConfig.token });
+                    window.appConfig.token = response.headers("AuthToken");
+                    restangularProvider.setDefaultHeaders({ AuthToken: window.appConfig.token });
                 }
 
                 decrementCurrentCalls();

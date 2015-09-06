@@ -36,8 +36,6 @@ namespace Base.SinglePageApplication.Filters
                     isAuthenticated = false;
                 }
 
-                HttpContext.Current.Response.AddHeader("AuthToken", authenticationToken);
-
                 if (!isAuthenticated)
                 {
                     //If the token passed is invalid
@@ -46,9 +44,6 @@ namespace Base.SinglePageApplication.Filters
                     return;
                 }
 
-                //If the token is valid
-                HttpContext.Current.Response.AddHeader("AuthToken", authenticationToken);
-                HttpContext.Current.Response.AddHeader("AuthStatus", "Authorized");
                 return;
             }
 
