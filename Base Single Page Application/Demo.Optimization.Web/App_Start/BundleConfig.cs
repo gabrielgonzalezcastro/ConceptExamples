@@ -21,23 +21,27 @@ namespace Base.SinglePageApplication
             // script bundle declarations
             // ScriptBundle is the same as generic bundle, except it automatically applies the default JsMinify transformation
             bundles.Add(new ScriptBundle("~/bundles/modernizr")
-                .Include("~/Scripts/framework/modernizr-{version}.js"));
+                .Include("~/Scripts/modernizr-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/framework").Include(
-                "~/Scripts/framework/jquery-{version}.js",
-                "~/Scripts/framework/underscore.js",
-                "~/Scripts/framework/angular.js",
-                "~/Scripts/framework/angular-route.js",
-                "~/Scripts/framework/toastr.js",
-                "~/Scripts/framework/lodash.js",
-                "~/Scripts/framework/restangular.js",
-                "~/Scripts/framework/bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/bundles/frameworks").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/underscore.js",
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-route.js",
+                "~/Scripts/toastr.js",
+                "~/Scripts/lodash.js",
+                "~/Scripts/restangular.js",
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/ui-bootstrap-tpls-0.13.4.min.js",
+                 "~/Scripts/angular-sanitize.js"));
 
             // the order you include scripts in the bundle is the order they will be consolidated
             bundles.Add(new ScriptBundle("~/bundles/app")
+                .Include("~/Scripts/app/bootstrap/restangularBootstrapper.js")
                 .Include("~/Scripts/app/app.js")
                 .IncludeDirectory("~/Scripts/app/services", "*.js")
                 .IncludeDirectory("~/Scripts/app/controllers", "*.js"));
+
 
             #endregion
 

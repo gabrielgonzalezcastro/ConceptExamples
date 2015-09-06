@@ -2,7 +2,7 @@
 
     var bookService = function (Restangular) {
 
-        var base = Restangular.all("api/Book");
+        var base = Restangular.all("Book");
 
         return {
             add: function (book) {

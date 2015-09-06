@@ -1,9 +1,10 @@
 ﻿using Base.Business;
 using System.Web.Http;
+using Base.SinglePageApplication.Infrastructure;
 
 namespace Base.SinglePageApplication.Controllers.api
 {
-    [RoutePrefix("api/Book")]
+    [RoutePrefix("public/api/v1/Book")]
     public class BookController : BaseController
     {
         private readonly IApplicationFacade _applicationFacade;

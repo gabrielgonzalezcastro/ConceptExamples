@@ -162,9 +162,11 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\ApiAuthorizeAttribute.cs" />
+    <Compile Include="Filters\ApiExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AngularRoute.cs" />
     <Compile Include="Infrastructure\PageConfiguration.cs" />
     <Compile Include="Infrastructure\TokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,50 +185,53 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\framework\angular-bootstrap-prettify.js" />
-    <Content Include="Scripts\framework\angular-bootstrap-prettify.min.js" />
-    <Content Include="Scripts\framework\angular-bootstrap.js" />
-    <Content Include="Scripts\framework\angular-bootstrap.min.js" />
-    <Content Include="Scripts\framework\angular-cookies.js" />
-    <Content Include="Scripts\framework\angular-cookies.min.js" />
-    <Content Include="Scripts\framework\angular-loader.js" />
-    <Content Include="Scripts\framework\angular-loader.min.js" />
-    <Content Include="Scripts\framework\angular-mocks.js" />
-    <Content Include="Scripts\framework\angular-resource.js" />
-    <Content Include="Scripts\framework\angular-resource.min.js" />
-    <Content Include="Scripts\framework\angular-route.js" />
-    <Content Include="Scripts\framework\angular-route.min.js" />
-    <Content Include="Scripts\framework\angular-sanitize.js" />
-    <Content Include="Scripts\framework\angular-sanitize.min.js" />
-    <Content Include="Scripts\framework\angular-scenario.js" />
-    <Content Include="Scripts\framework\angular.js" />
-    <Content Include="Scripts\framework\angular.min.js" />
+    <Content Include="Scripts\angular-bootstrap-prettify.js" />
+    <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
+    <Content Include="Scripts\angular-bootstrap.js" />
+    <Content Include="Scripts\angular-bootstrap.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\bootstrap\restangularBootstrapper.js" />
     <Content Include="Scripts\app\services\bookService.js" />
     <Content Include="Scripts\app\controllers\createController.js" />
     <Content Include="Scripts\app\controllers\detailsController.js" />
     <Content Include="Scripts\app\controllers\homeController.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\listController.js" />
-    <Content Include="Scripts\framework\bootstrap.js" />
-    <Content Include="Scripts\framework\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\toastr.less" />
-    <Content Include="Scripts\framework\angular.min.js.map" />
-    <Content Include="Scripts\framework\angular-route.min.js.map" />
-    <None Include="Scripts\framework\jquery-2.0.3.intellisense.js" />
-    <Content Include="Scripts\framework\jquery-2.0.3.js" />
-    <Content Include="Scripts\framework\jquery-2.0.3.min.js" />
-    <Content Include="Scripts\framework\modernizr-2.6.2.js" />
-    <Content Include="Scripts\framework\toastr.js" />
-    <Content Include="Scripts\framework\toastr.min.js" />
-    <Content Include="Scripts\framework\underscore.js" />
-    <Content Include="Scripts\framework\underscore.min.js" />
-    <Content Include="Scripts\framework\lodash.js" />
-    <Content Include="Scripts\framework\lodash.min.js" />
-    <Content Include="Scripts\framework\restangular.js" />
-    <Content Include="Scripts\framework\restangular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.13.4.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\restangular.js" />
+    <Content Include="Scripts\restangular.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -235,13 +240,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Scripts\framework\jquery-2.0.3.min.map" />
-    <Content Include="Scripts\framework\underscore.min.map" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Scripts\underscore.min.map" />
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\app\bootstrap\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

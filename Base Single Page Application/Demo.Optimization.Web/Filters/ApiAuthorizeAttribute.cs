@@ -29,7 +29,7 @@ namespace Base.SinglePageApplication.Filters
                 try
                 {
                     //Verify the token
-                    TokenManager.ValidateJwtToken(authenticationToken);
+                    TokenManager.ValidateJwtToken(authenticationToken, "demoApp");
                 }
                 catch (Exception ex)
                 {

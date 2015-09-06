@@ -11,7 +11,7 @@ namespace Base.SinglePageApplication.Infrastructure
     public class TokenManager
     {
 
-        public static string CreateJwtToken(string userName, string role)
+        public static string CreateJwtToken(string userName, string role, string audience)
         {
             var claimList = new List<Claim>()
             {
@@ -24,8 +24,8 @@ namespace Base.SinglePageApplication.Infrastructure
             var sSKey = new InMemorySymmetricSecurityKey(GetBytes(secretKey));
 
             JwtSecurityToken jwtToken = new JwtSecurityToken(
-                issuer: "http://issuer.com",
-                audience: "http://mysite.com",
+                issuer: "demoApp",
+                audience: audience,
                 claims: new List<Claim>() {new Claim(ClaimTypes.Name, "Andras Nemes")},
                 notBefore: null,
                 expires: DateTime.Now.AddDays(1),
@@ -37,13 +37,13 @@ namespace Base.SinglePageApplication.Infrastructure
             return tokenHandler.WriteToken(jwtToken);
         }
 
-        public static ClaimsPrincipal ValidateJwtToken(string jwtToken)
+        public static ClaimsPrincipal ValidateJwtToken(string jwtToken, string audience)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
             TokenValidationParameters validationParams = new TokenValidationParameters()
                 {
-                    ValidAudience = "demoApp",
+                    ValidAudience = audience,
                     ValidIssuer = "demoApp",
                     ValidateIssuer = true,
                     IssuerSigningToken = new BinarySecretSecurityToken(GetBytes("ThisIsAnImportantStringAndIHaveNoIdeaIfThisIsVerySecureOrNot!"))
