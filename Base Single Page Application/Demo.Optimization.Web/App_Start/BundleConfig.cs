@@ -29,6 +29,8 @@ namespace Base.SinglePageApplication
                 "~/Scripts/framework/angular.js",
                 "~/Scripts/framework/angular-route.js",
                 "~/Scripts/framework/toastr.js",
+                "~/Scripts/framework/lodash.js",
+                "~/Scripts/framework/restangular.js",
                 "~/Scripts/framework/bootstrap.js"));
 
             // the order you include scripts in the bundle is the order they will be consolidated

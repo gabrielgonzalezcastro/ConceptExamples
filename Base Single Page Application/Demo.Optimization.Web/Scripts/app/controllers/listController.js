@@ -2,7 +2,9 @@
     
     var listController = function ($scope, bookService) {
 
-        $scope.books = bookService.getAll();
+        bookService.getAll().then(function (books) {
+            $scope.books = books;
+        });
 
         $scope.removeBook = function (book) {
             bookService.remove(book);

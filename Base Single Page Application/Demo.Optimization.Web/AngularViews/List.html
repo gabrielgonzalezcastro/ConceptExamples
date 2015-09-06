@@ -13,8 +13,8 @@
         </thead>
         <tbody>
             <tr ng-repeat="book in books">
-                <td>{{ book.bookId }}</td>
-                <td><a href="/#/BookDetails/{{ book.bookId }}">{{ book.title }}</a></td>
+                <td>{{ book.id }}</td>
+                <td><a href="/#/BookDetails/{{ book.id }}">{{ book.title }}</a></td>
                 <td>{{ book.author.firstName}} {{ book.author.lastName }}</td>
                 <td>{{ book.numberInStock }}</td>
                 <td><a ng-click="removeBook(book)" class="btn btn-danger">Remove</a>   </td>

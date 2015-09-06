@@ -54,7 +54,6 @@ namespace Base.SinglePageApplication.Infrastructure
             return claimPrincipal;
         }
 
-
         private static SecurityTokenDescriptor GetSecurityTokenDescriptor(InMemorySymmetricSecurityKey sSKey, List<Claim> claimList, string username)
         {
             var now = DateTime.UtcNow;
@@ -77,7 +76,6 @@ namespace Base.SinglePageApplication.Infrastructure
             return bytes;
 
         }
-
 
     }
 }

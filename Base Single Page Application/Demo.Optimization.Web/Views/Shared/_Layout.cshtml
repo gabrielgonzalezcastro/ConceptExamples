@@ -1,44 +1,56 @@
-﻿@using System.Web.Optimization
+﻿@model Base.SinglePageApplication.Infrastructure.PageConfiguration
+@using System.Web.Optimization
 @using System.Web.UI.WebControls
 <!DOCTYPE html>
-<html ng-app="BookApp">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Books Online</title>
+    <title>@ViewBag.Title - @Model.ApplicationName</title>
+
+    @Styles.Render("~/content/site")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+
+<body ng-app="BookApp" >
+    @*<div id="container-loading" class="rc-modal-container"></div>
+        <div id="loading" class="loading-panel">Loading...</div>*@
+    @RenderSection("Menu", true)
+
+    <div class="container">
+        @RenderBody()
+        <div ng-view></div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Online Book Store - <small>@Model.ApplicationVersion</small></p>
+        </footer>
+    </div>
+
+    @Scripts.Render(
+            "~/bundles/framework",
+            "~/bundles/app")
+
+    @*@Html.Partial("Directives")*@
+    @RenderSection("ServerVariables")
+    @RenderSection("scripts", required: false)
     
-        @Styles.Render("~/content/site")
-        @Scripts.Render("~/bundles/modernizr")
-
-        @RenderSection("styles", required: false)
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#/Home">Book Store</a>
-                <div class="nav-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a class="pull-right btn btn-link" href="/#/Home">Home</a></li>
-                        <li><a class="pull-right btn btn-link" href="/#/Books">Books</a></li>
-                        <li><a class="pull-right btn btn-link" href="/Home/Google">Go to Google</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            @RenderBody()
-            
-            <hr /> 
-            <footer>
-                <p>&copy; Online Book Store 2013</p>
-            </footer>
-        </div>
+    @*<div id="errorModal" rc-modal rc-modal-title="Oops! an error ocurred">
+        <h3 ng-bind="app.currentException.title"></h3>
+        <p ng-bind="app.currentException.message"></p>
         
-        @Scripts.Render(
-                        "~/bundles/framework",
-                        "~/bundles/app")
+        <div class="footer-button-panel">
+            <input type="button" class="btn btn-danger" value="Accept" ng-click="closeErrorModal()"/>
+        </div>
+    </div>*@
+    
+    @*<div id="tokenExpirationModal" rc-modal rc-modal-title="Error Processing the request">
+        <h3 ng-bind="app.currentException.title"></h3>
+        <p ng-bind="app.currentException.message"></p>
+        <div class="footer-button-panel">
+            <input type="button" class="btn btn-warning" value="Accept" ng-click="closeBadRequestModal()" />
+        </div>
+    </div>*@
 
-     @RenderSection("scripts", required: false)
-    </body>
+</body>
 </html>

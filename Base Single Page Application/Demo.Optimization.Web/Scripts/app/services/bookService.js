@@ -1,11 +1,8 @@
 ﻿(function () {
 
-    var bookService = function () {
+    var bookService = function (Restangular) {
 
-        var books = [
-            { bookId: 1, title: 'To Kill a Mockingbird', author: { firstName: 'Harper', lastName: 'Lee' }, numberInStock: 2, numberPurchases: 4 },
-            { bookId: 2, title: 'The Great Gatsby', author: { firstName: 'Scott', lastName: 'Fitzgerald' }, numberInStock: 2, numberPurchases: 6 }
-        ];
+        var base = Restangular.all("api/Book");
 
         return {
             add: function (book) {
@@ -21,15 +18,15 @@
                 }
             },
             get: function (bookId) {
-                return _.findWhere(books, { bookId: parseInt(bookId) });
+                return base.get(bookId + '/detail');
             },
             getAll: function () {
-                return books;
+                return base.getList();
             }
         };
     };
 
-    angular.module('BookApp').service('bookService', bookService);
+    angular.module('BookApp').service('bookService', ['Restangular', bookService]);
 
 
 }());

@@ -1,6 +1,6 @@
 ﻿
-(function () {
-    var app = angular.module('BookApp', ['ngRoute']);
+(function (ng,window, appConfig) {
+    var app = angular.module('BookApp', ['ngRoute', 'restangular']);
 
     app.config(['$routeProvider', function ($routeProvider) {
 
@@ -13,7 +13,7 @@
 
     }]);
 
-})();
+})(angular, window, window.appConfig);
 
 
 

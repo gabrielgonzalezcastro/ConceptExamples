@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6888E0BF-A9F8-4991-812F-576C87197908}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Base.SinglePageApplication</RootNamespace>
@@ -53,8 +53,19 @@
       <HintPath>..\packages\dotless.1.5.0\lib\dotless.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.0.1.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SimpleInjector.3.0.1\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.ExecutionContextScoping">
+      <HintPath>..\packages\SimpleInjector.Extensions.ExecutionContextScoping.3.0.1\lib\net45\SimpleInjector.Extensions.ExecutionContextScoping.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.WebApi">
+      <HintPath>..\packages\SimpleInjector.Integration.WebApi.3.0.2\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -64,12 +75,24 @@
     <Reference Include="System.IdentityModel.Tokens.Jwt">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
@@ -127,16 +150,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\Bundles\LessStyleBundle.cs" />
     <Compile Include="App_Start\Bundles\LessTransform.cs" />
+    <Compile Include="App_Start\DiContainer.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configuration\Redirect.cs" />
     <Compile Include="Configuration\RedirectCollection.cs" />
     <Compile Include="Configuration\RedirectModule.cs" />
     <Compile Include="Configuration\RedirectSection.cs" />
+    <Compile Include="Controllers\api\BookController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\ApiAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\PageConfiguration.cs" />
     <Compile Include="Infrastructure\TokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -194,6 +223,10 @@
     <Content Include="Scripts\framework\toastr.min.js" />
     <Content Include="Scripts\framework\underscore.js" />
     <Content Include="Scripts\framework\underscore.min.js" />
+    <Content Include="Scripts\framework\lodash.js" />
+    <Content Include="Scripts\framework\lodash.min.js" />
+    <Content Include="Scripts\framework\restangular.js" />
+    <Content Include="Scripts\framework\restangular.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -204,10 +237,23 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\framework\jquery-2.0.3.min.map" />
     <Content Include="Scripts\framework\underscore.min.map" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\app\bootstrap\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base.Business\Base.Business.csproj">
+      <Project>{0a17b126-a37e-4233-9371-ec75f09be27e}</Project>
+      <Name>Base.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base.Domain\Base.Domain.csproj">
+      <Project>{09f83f86-b912-48e7-a46e-b57ddcf9b83c}</Project>
+      <Name>Base.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

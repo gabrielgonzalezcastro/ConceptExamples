@@ -1,1 +1,30 @@
-﻿<div ng-view></div>
+﻿@model Base.SinglePageApplication.Infrastructure.PageConfiguration
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section ServerVariables
+{
+    <script type="text/javascript">
+        var appConfig = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model,Model.JsonSettings));
+    </script>
+}
+
+@section Menu
+{
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#/Home">Book Store</a>
+        <div class="nav-collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="pull-right btn btn-link" href="/#/Home">Home</a></li>
+                <li><a class="pull-right btn btn-link" href="/#/Books">Books</a></li>
+                <li><a class="pull-right btn btn-link" href="/Home/Google">Go to Google</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+}
+
+

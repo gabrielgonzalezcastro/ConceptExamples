@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Reflection;
 using System.Security;
 using System.Web;
 using System.Web.Mvc;
@@ -11,34 +13,45 @@ namespace Base.SinglePageApplication.Controllers
     /// </summary>
     public class HomeController : Controller
     {
-        //
+        //User: acer\Mediaworld
         // GET: /
         public ActionResult Index()
         {
+            string token;
             try
             {
-                //Generate the Token and add it to a cookie
+                //Generate the Token
                 string windowUsername = HttpContext.User.Identity.Name;
-                string token = TokenManager.CreateJwtToken(windowUsername, "role_Guest");
-                var userCookie = new HttpCookie("AuthToken", token);
-                userCookie.Expires.AddDays(1);
-                HttpContext.Response.Cookies.Add(userCookie);
-                }
+                token = TokenManager.CreateJwtToken(windowUsername, "role_Guest");
+            }
             catch (Exception ex)
             {
                 throw new SecurityException("Error Generating the Token");
             }
 
-            return View();
+            var pageConfiguration = new PageConfiguration
+            {
+                ApplicationName = "Books Online",
+                ApplicationVersion = Assembly.GetAssembly(typeof(HomeController)).GetName().Version.ToString(),
+                JsonSettings = PageConfiguration.GetDefaultJsonConfiguration(),
+                User = User.Identity.Name,
+                Token = token
+            };
+            
+            //TODO: 1.- PASS THE PAGECONFIGURATION OBJECT TO ANGULAR 
+            //TODO: 2.- USE THE TOKEN TO ADDED IN A HEADER CALLED 'AuthToken' IN EACH REQUEST USING RESTANGULAR 
+            //TODO: 3.- VERIFY THAT THE AUTHENTICATION OF THE WEB API WORKS (ApiAuthorizeAttribute)
+
+            return View(pageConfiguration);
         }
 
-        
 
 
-           
-       
 
-        
+
+
+
+
 
     }
 }
