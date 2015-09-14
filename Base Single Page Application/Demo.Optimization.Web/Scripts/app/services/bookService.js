@@ -22,7 +22,19 @@
             },
             getAll: function () {
                 return base.getList();
-            }
+            },
+            //getById : function(id) {
+            //    return Restangular.one('Book', id).get();
+            //},
+            //getWithLock: function(id) {
+            //    return Restangular.one('Book', id).customGET("", { lockBook: true });
+            //},
+            //reject: function(rejectBook) {
+            //    return base.customPOST(rejectBook, "reject");
+            //},
+            //checkDate: function( date, currency) {
+            //    return base.customGET("checkDate", { date: date, currency: currency });
+            //}
         };
     };
 

@@ -33,7 +33,8 @@ namespace Base.SinglePageApplication
                 "~/Scripts/restangular.js",
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/ui-bootstrap-tpls-0.13.4.min.js",
-                 "~/Scripts/angular-sanitize.js"));
+                 "~/Scripts/angular-sanitize.js",
+                 "~/Scripts/accounting.min.js"));
 
             // the order you include scripts in the bundle is the order they will be consolidated
             bundles.Add(new ScriptBundle("~/bundles/app")
