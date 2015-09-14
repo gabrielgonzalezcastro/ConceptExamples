@@ -13,7 +13,7 @@
     @RenderSection("styles", required: false)
 </head>
 
-<body ng-app="BookApp" >
+<body ng-app="BookApp" @*ng-controller="appController"*@ >
     @*<div id="container-loading" class="rc-modal-container"></div>
         <div id="loading" class="loading-panel">Loading...</div>*@
     @RenderSection("Menu", true)

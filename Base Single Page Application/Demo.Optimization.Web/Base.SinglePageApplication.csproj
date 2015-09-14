@@ -208,6 +208,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\bootstrap\restangularBootstrapper.js" />
+    <Content Include="Scripts\app\controllers\appController.js" />
     <Content Include="Scripts\app\Directives\rcAllowedCharacters.js" />
     <Content Include="Scripts\app\Directives\rcCapitalize.js" />
     <Content Include="Scripts\app\Directives\rcDate.js" />
