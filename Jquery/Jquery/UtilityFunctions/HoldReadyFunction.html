@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+
+        //jQuery.holdReady() : Holds or releases the execution of jQuery’s ready event.
+
+        var loaded = false;
+        $.holdReady(true); //hold the release of the ready event
+        $.getScript("plugin.js"); //download and execute the script
+
+        function printPluginReady() {
+            if (loaded)
+                $("#output").append("<br /> Plugin Loaded");
+            else
+                $("#output").append("<br /> Plugin NOT Loaded");
+        }
+
+        $(function() {
+            $("#output").append("Jquery ready event firing");
+            printPluginReady();
+            $("#output").click(printPluginReady);
+        });
+        
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>Hold Ready Demo</h1>
+    
+    <h3>Message appears below</h3>
+    <div id="output" style="background-color: yellow"></div>
+</body>
+</html>

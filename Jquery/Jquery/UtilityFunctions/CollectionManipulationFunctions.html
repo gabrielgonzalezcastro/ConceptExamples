@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+
+        var myArray = [1, 2, 3, 3, 4, 4, 5];
+        var myArray2 = [6, 7, 8];
+
+        //inArray
+        if ($.inArray(4, myArray) != -1)
+            console.log("4 is in the Array");
+
+        if ($.inArray(66, myArray) != -1)
+            console.log("66 is in the Array");
+
+        //Unique: Sorts an array of DOM elements, in place, with the duplicates removed.
+        $.unique(myArray);
+        console.log(myArray);
+
+        //Merge : Merge the contents of two arrays together into the first array.
+        $.merge(myArray, myArray2);
+        console.log(myArray);
+
+        //Map: Translate all items in an array or object to new array of items.
+        var newArray = $.map(myArray, function(item, index) {
+            return item * 2; // multiply all the items in myArray by 2
+        });
+        console.log(newArray);
+
+        //Grep: Finds the elements of an array which satisfy a filter function. The original array is not affected.
+        var grepperdArray = $.grep(myArray, function(item) {
+            return item % 2 == 0; //only even numbers 
+        });
+        console.log(grepperdArray);
+
+        $(function() {
+
+            //makeArray :Convert an array-like object into a true JavaScript array.
+            console.log($.makeArray($("div")));
+
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="out1">1</div>
+    <div id="out2">2</div>
+    <div id="out3">3</div>
+    <div id="out4">4</div>
+    <div id="out5">5</div>
+    <div id="out6">6</div>
+    <div id="out7">7</div>
+    
+
+</body>
+</html>

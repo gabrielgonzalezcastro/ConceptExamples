@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+        
+        var animal = {
+            eat: function() { console.log("I'm eating"); }
+        }
+
+        var dog = {
+            bark: function () { console.log("I'm barking"); }
+        }
+
+        var cat = {
+            meow: function () { console.log("Meow"); }
+        }
+
+        dog.bark();
+        console.log(dog.eat);
+
+        //jQuery.extend() : Merge the contents of two or more objects together into the first object.
+        $.extend(dog, animal);
+        dog.eat();
+
+        animal.eat = function () { console.log("I'm still eating"); }
+        animal.eat();
+        dog.eat();
+
+
+        var catdog = {};
+        $.extend(catdog, cat, dog, animal);
+        catdog.eat();
+        catdog.bark();
+        catdog.meow();
+
+
+        var animal2 = {
+            actions: {
+                eat: function () { console.log("I'm eating"); },
+                sit: function () { console.log("I'm sitting"); }
+            }
+        }
+
+        var dog2 = {
+            actions: {
+                bark: function () { console.log("I'm barking"); },
+                dig: function () { console.log("I'm digging"); }
+            }
+        }
+
+        dog2.actions.bark();
+        dog2.actions.dig();
+        $.extend(true, dog2, animal2); //Deep clone copies
+        dog2.actions.eat();
+        dog2.actions.sit();
+        console.log(dog2.actions.bark);
+    </script>
+
+</head>
+<body>
+    <h1>Extend Function Demo</h1>
+</body>
+</html>

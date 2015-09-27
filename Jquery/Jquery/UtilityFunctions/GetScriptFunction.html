@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+
+        //GetScript: Load a JavaScript file from the server using a GET HTTP request, then execute it.
+
+        $(function() {
+            $('input').click(function() {
+                // this make a asynchronous call to the server. in this case is a local call but can be a http call to get the script file.
+                $.getScript("script.js", function(data, textStatus) { //when the file is downloaded and executed the callback function is executed
+                    //data is the file and textStatus is the status of the call
+                    console.log(textStatus);
+                });
+            });
+
+            //Manage Exception on the call
+            $("#clickmeBtn").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
+                console.log(thrownError);
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    <h1> Get Script Demo</h1>
+    <input id="clickmeBtn" type="button" value="click me"/>
+</body>
+</html>

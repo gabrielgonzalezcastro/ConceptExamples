@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+
+        //This Type Test Functions are useful when we want to use optional parameters
+
+        function callAnotherFunction(arg1, arg2, arg3) {
+
+            //check if arg1 and arg2 is numeric
+            var times = $.isNumeric(arg1) ? arg1 : 4;
+            var delay = $.isNumeric(arg2) ? arg2 : 1000;
+            //check if one of the args are functions
+            var funcToCall = $.isFunction(arg1) ? arg1 : $.isFunction(arg2) ? arg2 : arg3;
+
+            var i = 0;
+            (function loopit() {
+                i++;
+                funcToCall();
+                if (i < times)
+                    setTimeout(loopit, delay);
+            })();
+        }
+
+        function functionToCall() {
+            $("#output").append("<br /> function called");
+        }
+
+        jQuery(function() {
+            callAnotherFunction(functionToCall);
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Type Test Functions Demos</h1>
+    <div id="output">
+
+    </div>
+    
+
+</body>
+</html>

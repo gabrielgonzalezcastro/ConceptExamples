@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+
+        $(function() {
+
+            //PushStack: Add a collection of DOM elements onto the jQuery stack.
+            //.each() : Iterate over a jQuery object, executing a function for each matched element.
+
+            //Creation of a Jquery Plugin- it put every Third div on the jquery stack
+            $.fn.everyThird = function() {
+                var array = [];
+                $.each(this, function(index, item) {
+                    if (index % 3 == 0) //divisible by 3
+                        array.push(item);
+                });
+                return this.pushStack(array, "everyThird", "");
+            }
+
+            //.end() : End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.
+            $("#clickmeBtn").click(function() {
+                $("div").everyThird().css("color", "Red").end().css("font-weight", "bold");
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>PushStack Demo</h1>
+    
+    <input id="clickmeBtn" type="button" value="click me"/>
+    
+    <div id="out1">1</div>
+    <div id="out2">2</div>
+    <div id="out3">3</div>
+    <div id="out4">4</div>
+    <div id="out5">5</div>
+    <div id="out6">6</div>
+    <div id="out7">7</div>
+
+</body>
+</html>

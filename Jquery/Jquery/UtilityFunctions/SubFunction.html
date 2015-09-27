@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+        
+        var animal = {
+            eat: function () { console.log("I'm eating"); }
+        }
+
+        var dog = {
+            bark: function () { console.log("I'm barking"); }
+        }
+
+        var cat = {
+            meow: function () { console.log("Meow"); }
+        }
+
+        var sub = jQuery.
+        // jQuery.sub(): Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object.
+
+        //own implementation of extend function
+        sub.old_extend = sub.extend;
+        sub.extend = function(target, source) {
+            return sub.old_extend(true, target, source);
+        }
+
+        var catDog = {};
+        sub.extend(catDog, cat, dog, animal);
+        console.log(catDog.eat());
+        console.log(catDog.bark());
+        console.log(catDog.meow());
+
+
+    </script>
+
+</head>
+<body>
+    <h1>Sub Fuction Demo</h1>
+</body>
+</html>
