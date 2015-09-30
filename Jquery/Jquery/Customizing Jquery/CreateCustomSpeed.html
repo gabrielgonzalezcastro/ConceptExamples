@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+        //Create custom Speeds
+        $.fx.speeds.slower = 2000;
+        $.fx.speeds.ludicrous = 100;
+
+        $(function() {
+
+            $("#fadingDiv").click(function () {
+                //.fadeOut( [duration ] [, complete ] ): Hide the matched elements by fading them to transparent.
+                $(this).fadeOut($("input:radio[name=group1]:checked").val(), function() {
+                    $(this).show();
+                });
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    <h1> Custom Speeds Demo</h1>
+    
+    <input type="radio" name="group1" checked value="slower"/>Slower
+    <input type="radio" name="group1" checked value="slow" />Slow
+    <input type="radio" name="group1" checked value="" />Normal
+    <input type="radio" name="group1" checked value="fast" />Fast
+    <input type="radio" name="group1" checked value="ludicrous" />Ludicrous
+    
+    <div id="fadingDiv" style="background-color: green; width: 400px;height: 200px"></div>
+
+</body>
+</html>

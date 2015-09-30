@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    
+    <script type="text/javascript">
+        
+        //Creation of the Custom Selector (named hiddenPanel). 
+        (function($) {
+            
+            // elem - is a current DOM element
+            // idx - the current loop index in stack
+            // meta - meta data about your selector
+            // items - stack of all elements to loop
+
+            // Return true to include current element
+            // Return false to explude current element
+
+            $.extend($.expr[':'], {
+                hiddenPanel: function (elem, index, meta, items) {
+                    if (elem == null) return false;
+                    var $pnl = $(elem);
+                    return $pnl.css('display') == 'none' ||
+                           $pnl.css('visibility') == 'hidden' ||
+                           $pnl.hasClass('hidden')
+                }
+            });
+        })(jQuery);
+
+        $(function() {
+            
+            $('#showPanelsButton').click(function () {
+                //usage
+                $('.panel:hiddenPanel')
+                    .removeClass('hidden')
+                    .css({ 'display': '', 'visibility': '' });
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+<body>
+    <h1>Custom Selector Demo</h1>
+    
+    <br /><br />
+    <button id="showPanelsButton">Show Hidden Panels</button>
+    <br /><br />
+    <div class="panel hidden">
+        Panel 1
+    </div>
+    <div class="panel" style="visibility:hidden">
+        Panel 2
+    </div>
+    <div class="panel" style="display:none;">
+        Panel 3
+    </div>
+    <div class="panel">
+        Panel 4
+    </div>
+
+</body>
+</html>
