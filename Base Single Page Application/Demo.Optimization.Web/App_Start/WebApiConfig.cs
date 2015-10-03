@@ -23,7 +23,7 @@ namespace Base.SinglePageApplication.App_Start
 
             //Exception treatment
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
-            //config.Filters.Add(new ApiExceptionFilter);
+            config.Filters.Add(new ApiExceptionFilter());
 
             //Logging
             //TODO: Implement TracerWriter On Core Project

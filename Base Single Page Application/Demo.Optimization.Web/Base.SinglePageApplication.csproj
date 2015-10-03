@@ -275,6 +275,10 @@
       <Project>{0a17b126-a37e-4233-9371-ec75f09be27e}</Project>
       <Name>Base.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Base.Core\Base.Core.csproj">
+      <Project>{1ac0801c-8937-45a2-9ee1-c5ccafaa66cb}</Project>
+      <Name>Base.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Base.Domain\Base.Domain.csproj">
       <Project>{09f83f86-b912-48e7-a46e-b57ddcf9b83c}</Project>
       <Name>Base.Domain</Name>

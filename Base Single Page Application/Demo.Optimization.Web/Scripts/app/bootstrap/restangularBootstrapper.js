@@ -79,7 +79,7 @@
                 if (response.status === 400) {
                     deferred.reject(response);
 
-                    if (response.data && response.data.className === 'Rabobank.CQRS.CommandException') {
+                    if (response.data && response.data.ClassName === 'Base.Core.Exception.CommandException') {
                         window.appConfig.rootScope.$broadcast('Restangular_BadRequest', { title: 'Validation errors found', message: parseMessageException(response.data.Message) });
                         return true;
                     }

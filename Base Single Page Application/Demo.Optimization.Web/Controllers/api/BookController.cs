@@ -1,5 +1,7 @@
-﻿using Base.Business;
+﻿using System.Collections.Generic;
+using Base.Business;
 using System.Web.Http;
+using Base.Core.Exception;
 using Base.SinglePageApplication.Infrastructure;
 
 namespace Base.SinglePageApplication.Controllers.api
@@ -25,6 +27,8 @@ namespace Base.SinglePageApplication.Controllers.api
         [HttpGet]
         public IHttpActionResult GetBook(int bookId)
         {
+            //TODO: Implementation of Show a popup message with the Error in the view when a CommandException is Thrown
+            //throw new CommandException(new List<string>{"Custom Error!!!"});
             var book = _applicationFacade.GetBook(bookId);
             return Ok(book);
         }
