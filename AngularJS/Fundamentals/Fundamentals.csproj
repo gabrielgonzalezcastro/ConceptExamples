@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{471616AC-124A-4025-8097-EAED49A7798E}</ProjectGuid>
+    <ProjectGuid>{6549DE6A-DC43-4D51-8D48-1F81D0B0E775}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jquery</RootNamespace>
-    <AssemblyName>Jquery</AssemblyName>
+    <RootNamespace>Fundamentals</RootNamespace>
+    <AssemblyName>Fundamentals</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ang-views\NewEvent.html" />
+    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,29 +68,42 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Customizing Jquery\CreateCustomSelector.html" />
-    <Content Include="Customizing Jquery\CreateCustomSpeed.html" />
-    <Content Include="Events\Deferred_SimpleExample.html" />
-    <Content Include="Events\Promises.html" />
-    <Content Include="packages.config" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="UtilityFunctions\CollectionManipulationFunctions.html" />
-    <Content Include="UtilityFunctions\ExtendFunction.html" />
-    <Content Include="UtilityFunctions\GetScriptFunction.html" />
-    <Content Include="UtilityFunctions\HoldReadyFunction.html" />
-    <Content Include="UtilityFunctions\plugin.js" />
-    <Content Include="UtilityFunctions\PushStackFunction.html" />
-    <Content Include="UtilityFunctions\script.js" />
-    <Content Include="UtilityFunctions\SubFunction.html" />
-    <Content Include="UtilityFunctions\TypeTestingFunctions.html" />
+    <Content Include="ang-views\EventDetails.html" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\angularjs-logo.png" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\app\app.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\app\controllers\EditEventController.js" />
+    <Content Include="scripts\app\controllers\EventController.js" />
+    <Content Include="scripts\app\filters\customFilter.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-1.9.1.js" />
+    <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\underscore-1.4.4.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -101,9 +117,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10707</DevelopmentServerPort>
+          <DevelopmentServerPort>33340</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:10707/</IISUrl>
+          <IISUrl>http://localhost:33340/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
