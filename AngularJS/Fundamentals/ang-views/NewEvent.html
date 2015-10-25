@@ -46,7 +46,7 @@
                     <br />
 
                     <button type="submit" ng-disabled="newEventForm.$invalid" ng-click="saveEvent(event, newEventForm)" class="btn btn-primary">Save</button>
-                    <button type="button" ng-click="cancelEdit()" class="btn btn-defualt">Cancel</button>
+                    <button type="button" ng-click="cancelEdit()" class="btn btn-default">Cancel</button>
                 </form>
             </div>
         </div>
@@ -56,10 +56,12 @@
     <script src="../scripts/underscore-1.4.4.min.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/angular.min.js"></script>
+    <script src="../scripts/angular-resource.min.js"></script>
     <script src="../scripts/app/app.js"></script>
     <script src="../scripts/app/controllers/EventController.js"></script>
     <script src="../scripts/app/filters/customFilter.js"></script>
     <script src="../scripts/app/controllers/EditEventController.js"></script>
+    <script src="../scripts/app/services/eventDataService.js"></script>
 
 
 </body>
