@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Locale Sample </title>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Content/app.css" />
+</head>
+<body>
+    <div class="container">
+        <div ng-controller="CookieStoreSampleController" style="padding:20px;">
+
+            <button class="btn" ng-click="saveEventToCookie(event)">Store Cookie</button>
+            <button class="btn" ng-click="getEventFromCookie()">Get Cookie</button>
+            <button class="btn" ng-click="removeEventCookie()">RemoveCookie</button>
+
+        </div>
+    </div>
+
+
+    <script src="../scripts/jquery-1.9.1.min.js"></script>
+    <script src="../scripts/underscore-1.4.4.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
+    <script src="../scripts/angular-resource.min.js"></script>
+    <script src="../scripts/angular-cookies.min.js"></script>
+    <script src="../scripts/app/app.js"></script>
+    <script src="../scripts/app/controllers/CookieStoreSampleController.js"></script>
+</body>
+</html>

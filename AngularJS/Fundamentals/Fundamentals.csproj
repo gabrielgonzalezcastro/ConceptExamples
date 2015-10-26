@@ -74,14 +74,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ang-views\CacheSample.html" />
+    <Content Include="ang-views\CompileSample.html" />
+    <Content Include="ang-views\CookieStoreSample.html" />
     <Content Include="ang-views\EditProfile.html" />
+    <Content Include="ang-views\FilterSample.html" />
+    <Content Include="ang-views\LocaleSample.html" />
     <Content Include="ang-views\NewEvent.html" />
+    <Content Include="ang-views\TimeoutSample.html" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\angular-cookies.js" />
+    <Content Include="scripts\angular-cookies.min.js" />
     <Content Include="scripts\angular-resource.js" />
     <Content Include="scripts\angular-resource.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="packages.config" />
     <Content Include="scripts\angular-resource.min.js.map" />
+    <Content Include="scripts\angular-cookies.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,9 +120,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\app\controllers\CacheSampleController.js" />
+    <Content Include="scripts\app\controllers\CompileSampleController.js" />
+    <Content Include="scripts\app\controllers\CookieStoreSampleController.js" />
     <Content Include="scripts\app\controllers\EditEventController.js" />
     <Content Include="scripts\app\controllers\EditProfileController.js" />
     <Content Include="scripts\app\controllers\EventController.js" />
+    <Content Include="scripts\app\controllers\FilterSampleController.js" />
+    <Content Include="scripts\app\controllers\LocaleSampleController.js" />
+    <Content Include="scripts\app\controllers\TimeoutSampleController.js" />
     <Content Include="scripts\app\filters\customFilter.js" />
     <Content Include="scripts\app\services\cacheService.js" />
     <Content Include="scripts\app\services\eventDataService.js" />
