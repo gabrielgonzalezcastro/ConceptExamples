@@ -1,13 +1,13 @@
 ﻿'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, eventDataService) {
+    function EventController($scope, eventDataService, $routeParams) {
 
         $scope.myStyle = { color: 'red' };
         $scope.myClass = "blue";
         $scope.sortOrder = 'creatorName';
 
-        $scope.event = eventDataService.getEvent().then(function(data) {
+        eventDataService.getEvent($routeParams.eventId).then(function (data) {
             $scope.event = data;
         });
        

@@ -1,30 +1,13 @@
-﻿<!doctype html>
-<html lang="en" ng-app="eventsApp">
-<head>
-    <meta charset="utf-8">
-    <title>Timeout Sample </title>
-    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="../Content/app.css" />
-</head>
-<body>
-    <div class="container">
-        <div ng-controller="TimeoutSampleController" style="padding:20px;">
+﻿
+<div class="container">
+    <div ng-controller="TimeoutSampleController" style="padding:20px;">
 
-            <button class="btn" ng-click="cancel()">Cancel</button>
-            <h3>Name: {{name}}</h3>
+        <button class="btn" ng-click="cancel()">Cancel</button>
+        <h3>Name: {{name}}</h3>
 
-            <input type="text" ng-model="foo" />
+        <input type="text" ng-model="foo" />
 
 
-        </div>
     </div>
+</div>
 
-    <script src="../scripts/jquery-1.9.1.min.js"></script>
-    <script src="../scripts/underscore-1.4.4.min.js"></script>
-    <script src="../scripts/bootstrap.min.js"></script>
-    <script src="../scripts/angular.min.js"></script>
-    <script src="../scripts/angular-resource.min.js"></script>
-    <script src="../scripts/app/app.js"></script>
-    <script src="../scripts/app/controllers/TimeoutSampleController.js"></script>
-</body>
-</html>

@@ -1,64 +1,39 @@
-﻿<html lang="en" ng-app="eventsApp">
-<head>
-    <meta charset="utf-8">
-    <title>Event Registration</title>
-    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="../Content/app.css" />
-</head>
-<body>
-
-    <div class="container-fluid" ng-controller="EditProfileController">
-        <form name="profileForm">
-            <div class="row-fluid">
-                <div class="span3">
-                    <img ng-src="{{getGravatarUrl(user.emailAddress)}}" />
-                </div>
-                <div class="span3">
+﻿
+<div class="container-fluid" ng-controller="EditProfileController">
+    <form name="profileForm">
+        <div class="row-fluid">
+            <div class="span3">
+                <img ng-src="{{getGravatarUrl(user.emailAddress)}}" />
+            </div>
+            <div class="span3">
+                <fieldset>
+                    <label for="userName">User Name:</label>
+                    <input focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="user.userName" />
+                    <label for="password">Password:</label>
+                    <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+                </fieldset>
+                <div style="margin-top:15px">
                     <fieldset>
-                        <label for="userName">User Name:</label>
-                        <input focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="user.userName" />
-                        <label for="password">Password:</label>
-                        <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+                        <label for="name">Name:</label>
+                        <input id="name" type="text" placeholder="Name" ng-model="user.name" />
+                        <label for="emailAddress">Email Address:</label>
+                        <input id="emailAddress" type="email" placeholder="Email Address" ng-model="user.emailAddress" />
                     </fieldset>
-                    <div style="margin-top:15px">
-                        <fieldset>
-                            <label for="name">Name:</label>
-                            <input id="name" type="text" placeholder="Name" ng-model="user.name" />
-                            <label for="emailAddress">Email Address:</label>
-                            <input id="emailAddress" type="email" placeholder="Email Address" ng-model="user.emailAddress" />
-                        </fieldset>
-                    </div>
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="span6 offset3">
-                    <label for="bio">Bio:</label>
-                    <textarea id="bio" rows="6" style="width:97%; color:#52575c" placeholder="Bio" ng-model="user.bio"></textarea>
-                </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 offset3">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" rows="6" style="width:97%; color:#52575c" placeholder="Bio" ng-model="user.bio"></textarea>
             </div>
-            <div class="row-fluid">
-                <div class="span6 offset3">
-                    <div class="pull-left"><span class="btn">Cancel</span></div>
-                    <div class="pull-right"><button type="submit" class="btn btn-primary">Save</button></div>
-                </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 offset3">
+                <div class="pull-left"><span class="btn">Cancel</span></div>
+                <div class="pull-right"><button type="submit" class="btn btn-primary">Save</button></div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
-
-    <script src="../scripts/jquery-1.9.1.min.js"></script>
-    <script src="../scripts/underscore-1.4.4.min.js"></script>
-    <script src="../scripts/bootstrap.min.js"></script>
-    <script src="../scripts/angular.min.js"></script>
-    <script src="../scripts/angular-resource.min.js"></script>
-    <script src="../scripts/app/app.js"></script>
-    <script src="../scripts/app/controllers/EditProfileController.js"></script>
-    <script src="../scripts/app/services/gravatarUrlBuilder.js"></script>
-    <script src="../scripts/app/filters/customFilter.js"></script>
-
-
-    
-    
-
-</body>
-</html>

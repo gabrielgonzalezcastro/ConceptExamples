@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Web.Http;
 using Domain;
 
@@ -11,12 +12,43 @@ namespace Fundamentals.Controllers
     [RoutePrefix("api")]
     public class DataController : ApiController
     {
+       
+
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
+            var events = GetData();
             if (id == 1)
             {
-                var eventData = new Event
+                return Ok(events.First());
+            }
+            else
+            {
+                return BadRequest("event does not exist");
+            }
+        }
+
+        [HttpPost]
+        public IHttpActionResult Post(Domain.Event eventData)
+        {
+            if (eventData == null)
+                return BadRequest("Event Empty");
+
+            return Ok("Event Saved!");
+        }
+
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+            var events = GetData();
+            return Ok(events);
+        }
+
+        private List<Event> GetData()
+        {
+            var events = new List<Event>
+            {
+                new Event
                 {
                     Id = 1,
                     Name = "Angular Boot Camp",
@@ -61,24 +93,24 @@ namespace Fundamentals.Controllers
                             UpVoteCount = 0
                         }
                     }
-                };
+                },
+                new Event
+                {
+                     Id = 2,
+                    Name = "Halloween",
+                    Date = "1/1/2013",
+                    Time = "10:30 am",
+                     Location = new Location
+                    {
+                        Address = "Ireland",
+                        City = "Dublin",
+                        Province = "Leinster"
+                    },
+                }
+            };
 
-                return Ok(eventData);
-            }
-            else
-            {
-                return BadRequest("event does not exist");
-            }
-        }
-
-        [HttpPost]
-        public IHttpActionResult Post(Domain.Event eventData)
-        {
-            if (eventData == null)
-                return BadRequest("Event Empty");
-
-            return Ok("Event Saved!");
-        }
+            return events;
+        } 
     }
 
 

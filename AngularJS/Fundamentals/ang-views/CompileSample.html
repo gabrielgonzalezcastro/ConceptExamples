@@ -1,32 +1,12 @@
-﻿<!doctype html>
-<html lang="en" ng-app="eventsApp">
-<head>
-    <meta charset="utf-8">
-    <title>Compile Sample </title>
-    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="../Content/app.css" />
-</head>
-<body>
-    <div class="container">
-        <div ng-controller="CompileSampleController" style="padding:20px;">
+﻿
+<div class="container">
+    <div ng-controller="CompileSampleController" style="padding:20px;">
 
-            <div id="appendHere"></div>
-            <br />
-            name:<input type="text" ng-model="name" /><br />
-            markup: <input type="text" ng-model="markup"  /><br />
-            <button class="btn" ng-click="appendDivToElement(markup)">Append</button>
+        <div id="appendHere"></div>
+        <br />
+        name:<input type="text" ng-model="name" /><br />
+        markup: <input type="text" ng-model="markup" /><br />
+        <button class="btn" ng-click="appendDivToElement(markup)">Append</button>
 
-        </div>
     </div>
-
-
-    <script src="../scripts/jquery-1.9.1.min.js"></script>
-    <script src="../scripts/underscore-1.4.4.min.js"></script>
-    <script src="../scripts/bootstrap.min.js"></script>
-    <script src="../scripts/angular.min.js"></script>
-    <script src="../scripts/angular-resource.min.js"></script>
-    <script src="../scripts/app/app.js"></script>
-    <script src="../scripts/app/controllers/CompileSampleController.js"></script>
-
-</body>
-</html>
+</div>

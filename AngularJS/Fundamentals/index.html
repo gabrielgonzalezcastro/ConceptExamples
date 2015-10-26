@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Event Registration</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/app.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="navbar" ng-controller="MainMenuController">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="" ng-click="createEvent()">Create Event</a></li>
+                    <li><a href="#/cacheSample">Cache Sample</a></li>
+                    <li><a href="#/compileSample">Compile Sample</a></li>
+                    <li><a href="#/cookieSample">Cookie Sample</a></li>
+                    <li><a href="#/editProfile">Edit Profile</a></li>
+                    <li><a href="#/filterSample">Filter Sample</a></li>
+                    <li><a href="#/localeSample">Locale Sample</a></li>
+                    <li><a href="#/timeoutSample">Timeout Sample</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <ng-view></ng-view>
+
+    </div>
+
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/underscore-1.4.4.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-resource.min.js"></script>
+    <script src="scripts/angular-cookies.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/app/app.js"></script>
+
+    <script src="scripts/app/filters/customFilter.js"></script>
+    <script src="scripts/app/services/cacheService.js"></script>
+    <script src="scripts/app/services/eventDataService.js"></script>
+    <script src="scripts/app/services/gravatarUrlBuilder.js"></script>
+
+    <script src="scripts/app/controllers/MainMenuController.js"></script>
+    <script src="scripts/app/controllers/CacheSampleController.js"></script>
+    <script src="scripts/app/controllers/CompileSampleController.js"></script>
+    <script src="scripts/app/controllers/CookieStoreSampleController.js"></script>
+    <script src="scripts/app/controllers/EditEventController.js"></script>
+    <script src="scripts/app/controllers/EditProfileController.js"></script>
+    <script src="scripts/app/controllers/EventController.js"></script>
+    <script src="scripts/app/controllers/FilterSampleController.js"></script>
+    <script src="scripts/app/controllers/LocaleSampleController.js"></script>
+    <script src="scripts/app/controllers/TimeoutSampleController.js"></script>
+    <script src="scripts/app/controllers/EventListController.js"></script>
+
+</body>
+</html>
