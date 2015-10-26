@@ -73,6 +73,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ang-views\CacheSample.html" />
     <Content Include="ang-views\EditProfile.html" />
     <Content Include="ang-views\NewEvent.html" />
     <Content Include="Global.asax" />
@@ -110,10 +111,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\app\controllers\CacheSampleController.js" />
     <Content Include="scripts\app\controllers\EditEventController.js" />
     <Content Include="scripts\app\controllers\EditProfileController.js" />
     <Content Include="scripts\app\controllers\EventController.js" />
     <Content Include="scripts\app\filters\customFilter.js" />
+    <Content Include="scripts\app\services\cacheService.js" />
     <Content Include="scripts\app\services\eventDataService.js" />
     <Content Include="scripts\app\services\gravatarUrlBuilder.js" />
     <Content Include="scripts\bootstrap.js" />

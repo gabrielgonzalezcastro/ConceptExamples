@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Cache Sample </title>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Content/app.css" />
+</head>
+<body>
+    <div class="container">
+        <div ng-controller="CacheSampleController" style="padding:20px;">
+
+            key: <input type="text" ng-model="key" /><br />
+            value: <input type="text" ng-model="value" /><br />
+            <button type="button" class="btn" ng-click="addToCache(key, value)">Add To Cache</button><br />
+            <br />
+            <br />
+            Key: <input type="text" ng-model="keyToRead" /><br />
+            <h3>Value from cache: {{readFromCache(keyToRead)}}</h3>
+            <h3>Cache Stats: {{getCacheStats()}}</h3>
+
+
+        </div>
+    </div>
+
+    <script src="../scripts/jquery-1.9.1.min.js"></script>
+    <script src="../scripts/underscore-1.4.4.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
+    <script src="../scripts/angular-resource.min.js"></script>
+    <script src="../scripts/app/app.js"></script>
+    <script src="../scripts/app/services/cacheService.js"></script>
+    <script src="../scripts/app/controllers/CacheSampleController.js"></script>
+
+</body>
+</html>
