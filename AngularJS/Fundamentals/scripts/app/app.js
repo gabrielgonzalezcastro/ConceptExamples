@@ -7,7 +7,7 @@ var eventsApp = angular.module('eventsApp', ['ngRoute', 'ngResource', 'ngCookies
             templateUrl: 'ang-views/EventList.html',
             controller: 'EventListController'
         });
-    
+
      $routeProvider.when('/newEvent',
          {
              templateUrl: 'ang-views/NewEvent.html',
@@ -48,7 +48,21 @@ var eventsApp = angular.module('eventsApp', ['ngRoute', 'ngResource', 'ngCookies
            templateUrl: 'ang-views/TimeoutSample.html',
            controller: 'TimeoutSampleController'
        });
-  
+
+     $routeProvider.when('/directiveSample',
+       {
+           templateUrl: 'ang-views/SampleDirective.html',
+           controller: 'SampleDirectiveController'
+       });
+     $routeProvider.when('/directiveControllerSample',
+      {
+          templateUrl: 'ang-views/DirectiveControllersSample.html'
+      });
+     $routeProvider.when('/directiveCompileSample',
+     {
+         templateUrl: 'ang-views/DirectiveCompileSample.html'
+     });
+
      $routeProvider.when('/eventDetail/:eventId',
          {
              templateUrl: '/ang-views/EventDetails.html',
@@ -63,5 +77,5 @@ var eventsApp = angular.module('eventsApp', ['ngRoute', 'ngResource', 'ngCookies
              //}
          });
      $routeProvider.otherwise({ redirectTo: '/' });
-     //$locationProvider.html5Mode(true);
+     //$locationProvider.html5Mode(true); //with this statement we don't have to use the # symbol in the routes(url).
  });

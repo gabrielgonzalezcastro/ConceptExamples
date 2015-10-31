@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>Event Registration</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/themes/base/datepicker.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
+    <link href="Content/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -19,6 +21,10 @@
                     <li><a href="#/filterSample">Filter Sample</a></li>
                     <li><a href="#/localeSample">Locale Sample</a></li>
                     <li><a href="#/timeoutSample">Timeout Sample</a></li>
+                    <li><a href="#/directiveSample">Directive Sample</a></li>
+                    <li><a href="#/directiveControllerSample">Directive Controller Sample</a></li>
+                    <li><a href="#/directiveCompileSample">Directive Compile Sample</a></li>
+
                 </ul>
             </div>
         </div>
@@ -28,6 +34,7 @@
     </div>
 
     <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/jquery-ui-1.11.4.min.js"></script>
     <script src="scripts/underscore-1.4.4.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/angular.min.js"></script>
@@ -40,7 +47,8 @@
     <script src="scripts/app/services/cacheService.js"></script>
     <script src="scripts/app/services/eventDataService.js"></script>
     <script src="scripts/app/services/gravatarUrlBuilder.js"></script>
-
+    
+    <!--CONTROLLERS-->
     <script src="scripts/app/controllers/MainMenuController.js"></script>
     <script src="scripts/app/controllers/CacheSampleController.js"></script>
     <script src="scripts/app/controllers/CompileSampleController.js"></script>
@@ -52,6 +60,21 @@
     <script src="scripts/app/controllers/LocaleSampleController.js"></script>
     <script src="scripts/app/controllers/TimeoutSampleController.js"></script>
     <script src="scripts/app/controllers/EventListController.js"></script>
+    <script src="scripts/app/controllers/SampleDirectiveController.js"></script>
+    
+    <!--DIRECTIVES-->
+    <script src="scripts/app/directives/mySampleDirective.js"></script>
+    <script src="scripts/app/directives/eventThumbnailDirective.js"></script>
+    <script src="scripts/app/directives/upVoteDirective.js"></script>
+    <script src="scripts/app/directives/dateKeysDirective.js"></script>
+    <script src="scripts/app/directives/gravatarDirective.js"></script>
+    <script src="scripts/app/directives/greetingDirective.js"></script>
+    <script src="scripts/app/directives/collapsibleDirective.js"></script>
+    <script src="scripts/app/directives/repeatWordDirective.js"></script>
+    <script src="scripts/app/directives/datePickerDirective.js"></script>
+    
+    
+    
 
 </body>
 </html>
