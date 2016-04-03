@@ -1,22 +1,25 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace DecoratorDesignPattern
 {
     //Decorator class that add logging functionality to the Application Facade
-    public class LogApplicationFacade : IApplicationFacade
+    public class LogApplicationFacade : ApplicationFacadeDecorator
     {
-        private readonly IApplicationFacade _applicationFacadeOriginal;
-
-        public LogApplicationFacade(IApplicationFacade applicationFacadeOriginal)
+        public LogApplicationFacade(IApplicationFacade applicationFacade) 
+            : base(applicationFacade)
         {
-            _applicationFacadeOriginal = applicationFacadeOriginal;
         }
 
-        public int Sum(int number1, int number2)
+        public override int Sum(int number1, int number2)
         {
-            Debug.WriteLine("Method Sum Called");
-            var result  =_applicationFacadeOriginal.Sum(number1, number2);
-            return result;
+            Log("Method Sum Called");
+            return base.Sum(number1, number2);
+        }
+
+        private void Log(string message)
+        {
+             Debug.WriteLine(message);
         }
     }
 }
